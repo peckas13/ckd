@@ -35,6 +35,14 @@ app.post('/deteccion', (req, res) => {
         class: body.class
     });
 
+    if (deteccion.sex === "M") {
+        //aqui va la logica del hombre
+        console.log("masculino");
+    } else if (deteccion.sex === "F") {
+        //aqui va la logica de la mujer
+        console.log("femenino");
+    }
+
 
 
     deteccion.save((err, detDB) => {
