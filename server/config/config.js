@@ -8,9 +8,9 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 let urlDB;
 
 if (process.env.NODE_ENV === 'dev') {
-    urlDB = 'mongodb://localhost:27017/renal';
+    urlDB = 'mongodb+srv://admin:admin@cluster0-mgzzq.mongodb.net/renal';
 } else {
-    urlDB = 'mongodb+srv://root:wOUTQwdjhIxcbASZ@cluster0-y1g0q.mongodb.net/renal'
+    urlDB = 'mongodb+srv://admin:admin@cluster0-mgzzq.mongodb.net/renal'
 }
 
 process.env.URLDB = urlDB;

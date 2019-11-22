@@ -2,6 +2,10 @@ const express = require('express');
 const Deteccion = require('../models/deteccion');
 const app = express();
 
+app.get('/get', (req, res) => {
+
+});
+
 app.post('/deteccion', (req, res) => {
     let body = req.body;
     let deteccion = new Deteccion({
