@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <title>Hospice Medical</title>
+    <title>MEDICAL CKD</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -275,7 +275,7 @@
 
             $.post("http://localhost:3000/deteccion", $(this).serialize(), function(resp) {
                     // logica del negocion en caso de que la peticion regrese un codigo de estatus 200
-                    alert(resp.detDB);
+                    alert();
                 })
                 .fail(function(error) {
                     // logica del negocio en caso de que la peticion regrese un codigo de estatus 400 o 500
