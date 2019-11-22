@@ -14,7 +14,7 @@ let deteccionSchema = new Schema({
     },
     mail: {
         type: String,
-        unique: true
+
     },
     age: {
         type: Number,
