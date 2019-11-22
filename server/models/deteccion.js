@@ -6,6 +6,9 @@ let deteccionSchema = new Schema({
     nom: {
         type: String
     },
+    sex: {
+        type: String
+    },
     phone: {
         type: Number
     },

@@ -6,6 +6,7 @@ app.post('/deteccion', (req, res) => {
     let body = req.body;
     let deteccion = new Deteccion({
         nom: body.nom,
+        sex: body.sex,
         phone: body.phone,
         mail: body.mail,
         age: body.age,
@@ -33,6 +34,8 @@ app.post('/deteccion', (req, res) => {
         ane: body.ane,
         class: body.class
     });
+
+
 
     deteccion.save((err, detDB) => {
         if (err) {
