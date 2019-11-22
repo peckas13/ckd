@@ -123,7 +123,7 @@
                         <form id="datos" class="form-wrap" action="#">
                             <h3 class="pb-20 text-center mb-20" name="tema1">Datos Personales</h3>
                             <input type="text" class="form-control" name="nom" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'">
-                            <div class="form-select" id="se">
+                            <div class="form-select" id="service-select">
                                 <select name="sex">
                                         <option data-display="">Sexo</option>
                                         <option value="M">Masculino</option>
@@ -137,7 +137,7 @@
                             <input id="datepicker2" name="bp" class="dates form-control" placeholder="Presion de sangre" type="number"> 3-.
                             <div class="form-select" id="service-select">
                                 <select name="sg">
-                                        <option data-display="">Gravedad especifica</option>
+                                        <option data-display="">Gravedad especifica de orina</option>
                                         <option value="1">1.005</option>
                                         <option value="2">1.010</option>
                                         <option value="3">1.015</option>
@@ -149,24 +149,24 @@
                             <div class="form-select" id="service-select">
                                 <select name="al">
                                         <option data-display="">Nivel de albumina</option>
-                                        <option value="1">0</option>
-                                        <option value="2">1</option>
-                                        <option value="3">2</option>
-                                        <option value="4">3</option>
-                                        <option value="5">4</option>
-                                        <option value="6">5</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                             </div>
                             5-.
                             <div class="form-select" id="service-select">
                                 <select name="su">
                                         <option data-display="">Nivel de azucar</option>
-                                        <option value="1">0</option>
-                                        <option value="2">1</option>
-                                        <option value="3">2</option>
-                                        <option value="4">3</option>
-                                        <option value="5">4</option>
-                                        <option value="6">5</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                             </div>
                             6-.
@@ -198,40 +198,40 @@
                             <div class="form-select" id="service-select">
                                 <select name="ba">
                                         <option data-display="">Bacteria</option>
-                                        <option value="true">Presente</option>
-                                        <option value="false">No presente</option>
+                                        <option value="present">Presente</option>
+                                        <option value="noPresent">No presente</option>
                                     </select>
                             </div>
-                            10-.<input id="datepicker2" name="bgr" class="dates form-control" placeholder="Glucosa en sangre al azar" type="number"> 11-.
-                            <input id="datepicker2" name="bu" class="dates form-control" placeholder="Urea de sangre" type="number"> 12-.
-                            <input id="datepicker2" name="sc" class="dates form-control" placeholder="Suero de creatinina" type="number"> 13-.
-                            <input id="datepicker2" name="sod" class="dates form-control" placeholder="Sodio" type="number"> 14.-
-                            <input id="datepicker2" name="pot" class="dates form-control" placeholder="Potasio" type="number"> 15-.
-                            <input id="datepicker2" name="hemo" class="dates form-control" placeholder="Hemoglobina" type="number"> 16-.
-                            <input id="datepicker2" name="pcv" class="dates form-control" placeholder="Numero de packetes en una célula" type="number"> 17-.
-                            <input id="datepicker2" name="wc" class="dates form-control" placeholder="Recuento de glóbulos blancos" type="number"> 18-.
-                            <input id="datepicker2" name="rc" class="dates form-control" placeholder="Conteo de glóbulos rojos" type="number"> 19-.
+                            10-.<input id="datepicker2" name="bgr" class="dates form-control" placeholder="Glucosa en sangre al azar" type="double"> 11-.
+                            <input id="datepicker2" name="bu" class="dates form-control" placeholder="Urea de sangre" type="double"> 12-.
+                            <input id="datepicker2" name="sc" class="dates form-control" placeholder="Suero de creatinina" type="double"> 13-.
+                            <input id="datepicker2" name="sod" class="dates form-control" placeholder="Sodio" type="double"> 14.-
+                            <input id="datepicker2" name="pot" class="dates form-control" placeholder="Potasio" type="double"> 15-.
+                            <input id="datepicker2" name="hemo" class="dates form-control" placeholder="Hemoglobina" type="double"> 16-.
+                            <input id="datepicker2" name="pcv" class="dates form-control" placeholder="Numero de packetes en una célula" type="double"> 17-.
+                            <input id="datepicker2" name="wc" class="dates form-control" placeholder="Recuento de glóbulos blancos" type="double"> 18-.
+                            <input id="datepicker2" name="rc" class="dates form-control" placeholder="Conteo de glóbulos rojos" type="double"> 19-.
                             <div class="form-select" id="service-select">
                                 <select name="htn">
 									<option data-display="">Hipertensión</option>
-									<option value="true">Si</option>
-									<option value="false">No</option>
+									<option value="Si">Si</option>
+									<option value="No">No</option>
 								</select>
                             </div>
                             20-.
                             <div class="form-select" id="service-select">
                                 <select name="dm">
 								<option data-display="">Diabetes mellitus</option>
-								<option value="true">Si</option>
-								<option value="false">No</option>
+								<option value="Si">Si</option>
+								<option value="No">No</option>
 							</select>
                             </div>
                             21-.
                             <div class="form-select" id="service-select">
                                 <select name="cad">
 							  <option data-display="">Enfermedad de la arteria coronaria</option>
-							<option value="true">Si</option>
-							<option value="false">No</option>
+							<option value="Si">Si</option>
+							<option value="No">No</option>
 						    </select>
                             </div>
                             22-.
@@ -246,16 +246,16 @@
                             <div class="form-select" id="service-select">
                                 <select name="pe">
 									  <option data-display="">Edema de pedal</option>
-									<option value="true">Si</option>
-									<option value="false">No</option>
+									<option value="Si">Si</option>
+									<option value="No">No</option>
 									</select>
                             </div>
                             24-.
                             <div class="form-select" id="service-select">
                                 <select name="ane">
 										  <option data-display="">Anemia</option>
-										<option value="true">Si</option>
-										<option value="false">No</option>
+										<option value="Si">Si</option>
+										<option value="No">No</option>
 										</select>
                             </div>
                             <div class="text-center confirm_btn_box">
@@ -275,7 +275,7 @@
 
             $.post("http://localhost:3000/deteccion", $(this).serialize(), function(resp) {
                     // logica del negocion en caso de que la peticion regrese un codigo de estatus 200
-                    alert(resp.ok);
+                    alert(resp.detDB);
                 })
                 .fail(function(error) {
                     // logica del negocio en caso de que la peticion regrese un codigo de estatus 400 o 500
