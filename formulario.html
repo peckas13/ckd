@@ -275,6 +275,7 @@
 
             $.post("http://localhost:3000/deteccion", $(this).serialize(), function(resp) {
                     // logica del negocion en caso de que la peticion regrese un codigo de estatus 200
+                    alert("Datos analizados correctamente , revisar la base de datos para el diagnostico");
                     alert(JSON.stringify(resp));
                 })
                 .fail(function(error) {
