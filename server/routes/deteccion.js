@@ -32,25 +32,31 @@ app.post('/deteccion', (req, res) => {
         appet: body.appet,
         pe: body.pe,
         ane: body.ane,
-        class: body.class
+
+
     });
 
-    if (deteccion.sex === "M") {
-        //aqui va la logica del hombre
-        console.log("masculino");
-    } else if (deteccion.sex === "F") {
-        //aqui va la logica de la mujer
-        console.log("femenino");
+    if (deteccion.al = "0" && deteccion.su == "0" &&
+        deteccion.rbc === "normal" && deteccion.pc === "normal" &&
+        deteccion.pcc === "noPresent" &&
+        deteccion.ba === "noPresent" && deteccion.dm === "No" &&
+        deteccion.cad === "No" &&
+        deteccion.appet === "good" && deteccion.pe === "No" &&
+        deteccion.ane === "No") {
+
+        console.log("notckd");
+        deteccion.class = 'notckd';
+
+
+    } else {
+        deteccion.class = 'ckd';
     }
-
-
 
     deteccion.save((err, detDB) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
                 err
-
             });
         }
         return res.status(200).json({

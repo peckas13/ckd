@@ -89,15 +89,15 @@ let deteccionSchema = new Schema({
 
     },
     htn: {
-        type: Boolean,
+        type: String,
 
     },
     dm: {
-        type: Boolean,
+        type: String,
 
     },
     cad: {
-        type: Boolean,
+        type: String,
 
     },
     appet: {
@@ -106,11 +106,11 @@ let deteccionSchema = new Schema({
 
     },
     pe: {
-        type: Boolean,
+        type: String,
 
     },
     ane: {
-        type: Boolean,
+        type: String,
 
     },
     class: {
