@@ -1,0 +1,7 @@
+{
+  "name": "CKD",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
