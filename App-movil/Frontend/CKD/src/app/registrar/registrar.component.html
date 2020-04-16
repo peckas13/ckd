@@ -1,4 +1,7 @@
 <ion-grid>
+  <div>
+    <ion-icon name="arrow-back-outline" style="width: 10%; border: solid black; color: black;" (click)="return()"></ion-icon>
+  </div>
 	<ion-row justify-content-center>
 		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
 			<div text-center>
@@ -10,15 +13,22 @@
 					<ion-input type="text" placeholder="Username"></ion-input>
 				</ion-item>
 
+        <ion-item>
+					<ion-input type="text" placeholder="Address"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+					<ion-input type="Email" placeholder="Email"></ion-input>
+				</ion-item>
+
 				<ion-item>
 					<ion-input type="password" placeholder="Password"></ion-input>
 				</ion-item>
 			</div>
 
 			<div padding>
-				<ion-button size="large" href="/touchid" expand="block">Login</ion-button>
+				<ion-button size="large" href="/touchid" expand="block">Registrar</ion-button>
       </div>
-      <p style="text-align: center;">Si no tienes cuenta <i style="color: red;" (click)="registrar()">Registrate</i></p>
 		</ion-col>
 	</ion-row>
 </ion-grid>
