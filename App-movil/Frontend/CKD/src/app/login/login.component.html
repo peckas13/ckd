@@ -2,23 +2,39 @@
 	<ion-row justify-content-center>
 		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
 			<div text-center>
-        <img src="../../assets/icon/imagen-logo.png" style="width: 20%;">
-        <img src="../../assets/icon/logo-ckd.png" style="width: 20%; position: absolute; top: 0; left: 15%;">
+				<img src="../../assets/icon/imagen-logo.png" style="width: 35%; margin-left: 32%;">
 			</div>
-			<div padding>
-				<ion-item>
-					<ion-input type="text" placeholder="Username"></ion-input>
-				</ion-item>
+			<br><br>
+			<form class="needs-validation" (ngSubmit)="onLogin(form)" #form="ngForm">
+				<div class="form-group" padding>
+					<ion-item>
+						<ion-input class="form-control" [(ngModel)]="usuario.strCorreoElectronico" type="text"
+							placeholder="Correo electronico" name="strCorreoElectronico" #strCorreoElectronico="ngModel"
+							[ngClass]="{ 'is-invalid': !strCorreoElectronico.valid && strCorreoElectronico.touched,'is-valid': strCorreoElectronico.valid}"
+							required></ion-input>
+					</ion-item>
+					<br>
+				</div>
+				<div class="form-group" padding>
+					<ion-item>
+						<ion-input class="form-control" [(ngModel)]="usuario.strContrasenia" maxlength="30"
+							type="password" name="password" #password="ngModel"
+							[ngClass]="{ 'is-invalid': !password.valid && password.touched,'is-valid': password.valid}"
+							required placeholder="Contraseña"></ion-input>
+					</ion-item>
+				</div>
+				<br>
 
-				<ion-item>
-					<ion-input type="password" placeholder="Password"></ion-input>
-				</ion-item>
-			</div>
+				<div padding>
+					<ion-button size="large" expand="block" type="submit" [disabled]="!form.valid">Iniciar sesion
+					</ion-button>
+				</div>
+				<br>
+				<div padding>
+					<ion-button size="large" expand="block" (click)="registrar()">Registrarse</ion-button>
+				</div>
+			</form>
 
-			<div padding>
-				<ion-button size="large" href="/touchid" expand="block">Login</ion-button>
-      </div>
-      <p style="text-align: center;">Si no tienes cuenta <i style="color: red;" (click)="registrar()">Registrate</i></p>
 		</ion-col>
 	</ion-row>
 </ion-grid>

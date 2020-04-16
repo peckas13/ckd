@@ -1,34 +1,56 @@
+<ion-header [translucent]="true">
+	<ion-toolbar>
+		<ion-title>
+			<ion-icon name="arrow-back-outline" style="color: white;" (click)="return()">
+			</ion-icon>
+			Registro
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
 <ion-grid>
-  <div>
-    <ion-icon name="arrow-back-outline" style="width: 10%; border: solid black; color: black;" (click)="return()"></ion-icon>
-  </div>
+
 	<ion-row justify-content-center>
 		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
 			<div text-center>
-        <img src="../../assets/icon/imagen-logo.png" style="width: 20%;">
-        <img src="../../assets/icon/logo-ckd.png" style="width: 20%; position: absolute; top: 0; left: 15%;">
+				<img src="../../assets/icon/imagen-logo.png" style="width: 20%; margin-left: 40%;">
 			</div>
 			<div padding>
 				<ion-item>
-					<ion-input type="text" placeholder="Username"></ion-input>
+					<ion-input type="text" placeholder="Nombre/Nombres"></ion-input>
 				</ion-item>
-
-        <ion-item>
-					<ion-input type="text" placeholder="Address"></ion-input>
-        </ion-item>
-        
-        <ion-item>
-					<ion-input type="Email" placeholder="Email"></ion-input>
-				</ion-item>
-
+				<br>
 				<ion-item>
-					<ion-input type="password" placeholder="Password"></ion-input>
+					<ion-input type="text" placeholder="Apellido paterno"></ion-input>
+				</ion-item>
+				<br>
+				<ion-item>
+					<ion-input type="text" placeholder="Apellido materno"></ion-input>
+				</ion-item>
+				<br>
+				<ion-item>
+					<ion-input type="Email" placeholder="Correo Electronico"></ion-input>
+				</ion-item>
+				<br>
+				<ion-item>
+					<ion-input type="number" placeholder="Número telefonico"></ion-input>
+				</ion-item>
+				<br>
+				<ion-item>
+					<ion-input type="text" placeholder="Ciudad"></ion-input>
+				</ion-item>
+				<br>
+				<ion-item>
+					<ion-input type="date" placeholder="Fecha de nacimiento"></ion-input>
+				</ion-item>
+				<br>
+				<ion-item>
+					<ion-input type="password" placeholder="Contraseña"></ion-input>
 				</ion-item>
 			</div>
-
+			<br>
 			<div padding>
-				<ion-button size="large" href="/touchid" expand="block">Registrar</ion-button>
-      </div>
+				<ion-button size="large" expand="block">Registrar</ion-button>
+			</div>
 		</ion-col>
 	</ion-row>
 </ion-grid>

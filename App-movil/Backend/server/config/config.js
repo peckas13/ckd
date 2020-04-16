@@ -14,3 +14,7 @@ if (process.env.NODE_ENV === 'dev') {
 }
 
 process.env.URLDB = urlDB;
+process.env.SEED = process.env.SEED || 'firma-super-secreta';
+
+//TIEMPO EN EL QUE EXPIRA EL TOKEN
+process.env.CADUCIDAD_TOKEN = process.env.CADUCIDAD_TOKEN || '3h';

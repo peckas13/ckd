@@ -5,8 +5,9 @@ const bodyParser = require('body-parser');
 const app = express();
 
 
-//parse application/x-www-from-urlencoded
-app.use(bodyParser.urlencoded({ extend: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
 
 // Habilita CORS
 app.use((req, res, next) => {
@@ -28,10 +29,10 @@ app.use(bodyParser.json());
 app.use(require('./routes/index'));
 //conector a la db
 mongoose.connect(process.env.URLDB, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    },
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+},
     (err, resp) => {
         if (err) throw err;
 

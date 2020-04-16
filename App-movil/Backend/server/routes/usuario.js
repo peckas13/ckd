@@ -45,6 +45,9 @@ app.post('/registrar', (req, res) => {
         strCiudad: body.strCiudad,
         numTelefono: body.numTelefono,
         strNombre: body.strNombre,
+        strApellidoPat: body.strApellidoPat,
+        strApellidoMat: body.strApellidoMat,
+        dateFechaNacimiento: body.dateFechaNacimiento,
         strContrasenia: bcrypt.hashSync(body.strContrasenia, 10)
     });
     usuario.save((err, usrDB) => {
@@ -99,7 +102,7 @@ app.delete('/eliminar/:id', (req, res) => {
 app.post('/login', (req, res) => {
     let body = req.body;
 
-    Usuario.findOne({ strCorreoElectronico: body.strCorreoElectronico }, (err, usrDB) => {
+    Usuario.findOne({ strCorreoElectronico: body.strCorreoElectronico }, (err, admDB) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -107,7 +110,7 @@ app.post('/login', (req, res) => {
             });
         }
 
-        if (!usrDB) {
+        if (!admDB) {
             return res.status(400).json({
                 ok: false,
                 err: {
@@ -126,12 +129,12 @@ app.post('/login', (req, res) => {
         }
 
         let token = jwt.sign({
-            usuario: usrDB
+            usuario: admDB
         }, process.env.SEED, { expiresIn: process.env.CADUCIDAD_TOKEN });
 
         return res.status(200).json({
             ok: true,
-            usuario: usrDB,
+            usuario: admDB,
             token
         });
     });

@@ -7,11 +7,18 @@ let Schema = mongoose.Schema;
 let usuarioSchema = new Schema({
     strRol: {
         type: String,
-        required: [true, 'Favor de ingresar el rol del administrador']
     },
     strNombre: {
         type: String,
         required: [true, 'Por favor ingresar el nombre del usuario']
+    },
+    strApellidoPat: {
+        type: String,
+        required: [true, 'Por favor ingresar el apellido']
+    },
+    strApellidoMat: {
+        type: String,
+        required: [true, 'Por favor ingresar el apellido']
     },
     strCorreoElectronico: {
         type: String,
@@ -20,6 +27,10 @@ let usuarioSchema = new Schema({
     strCiudad: {
         type: String,
         required: [true, 'Por favor ingresar tu ciudad']
+    },
+    dateFechaNacimiento: {
+        type: Date,
+        require: [true, 'Ingresar la fecha de nacimiento']
     },
     numTelefono: {
         type: Number,
