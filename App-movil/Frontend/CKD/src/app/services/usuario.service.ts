@@ -16,4 +16,8 @@ export class UsuarioService {
         return this.http.post(this.url + 'login', usuario).toPromise();
     }
 
+    registrarUsuario(usuario: UsuarioModel) {
+        return this.http.post(`${this.url}registrar`, usuario).toPromise();
+    }
+
 }
