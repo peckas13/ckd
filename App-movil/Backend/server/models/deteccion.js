@@ -3,23 +3,6 @@ const uniqueValidator = require('mongoose-unique-validator');
 let Schema = mongoose.Schema;
 
 let deteccionSchema = new Schema({
-    nom: {
-        type: String
-    },
-    sex: {
-        type: String
-    },
-    phone: {
-        type: Number
-    },
-    mail: {
-        type: String,
-
-    },
-    age: {
-        type: Number,
-
-    },
     bp: {
         type: Number,
 
@@ -113,9 +96,8 @@ let deteccionSchema = new Schema({
         type: String,
 
     },
-    class: {
-        type: String,
-            default: '?'
+    resultado: {
+        type: String
     }
 });
 

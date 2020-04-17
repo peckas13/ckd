@@ -4,8 +4,6 @@ import { UsuarioModel } from "../models/usuario";
 import { NgForm } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 
-
-
 @Component({
   selector: 'app-registrar',
   templateUrl: './registrar.component.html',

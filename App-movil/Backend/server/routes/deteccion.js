@@ -6,14 +6,9 @@ app.get('/get', (req, res) => {
 
 });
 
-app.post('/deteccion', (req, res) => {
+app.post('/test', (req, res) => {
     let body = req.body;
     let deteccion = new Deteccion({
-        nom: body.nom,
-        sex: body.sex,
-        phone: body.phone,
-        mail: body.mail,
-        age: body.age,
         sg: body.sg,
         al: body.al,
         su: body.su,
@@ -49,11 +44,11 @@ app.post('/deteccion', (req, res) => {
         deteccion.ane === "No") {
 
         console.log("notckd");
-        deteccion.class = 'notckd';
+        deteccion.resultado = 'NEGATIVO';
 
 
     } else {
-        deteccion.class = 'ckd';
+        deteccion.resultado = 'POSITIVO';
     }
 
     deteccion.save((err, detDB) => {

@@ -1,0 +1,253 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Antes del test...</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Para realizar este test deberas de tener los siguientes estudios clínicos:
+    </ion-card-content>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Tasa de filtración glomerular.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Prueba de creatinina en sangre y orina.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Análisis de albúmina en orina.</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      Coloca los resultados de tus estudios clínicos en los siguientes campos:
+    </ion-card-content>
+  </ion-card>
+
+  <form (ngSubmit)="testResultado()" #forma="ngForm">
+    <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+      <div padding>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer01" name="bp" [(ngModel)]="test.bp" #bp="ngModel" required
+            type="number" placeholder="Presion de sangre"></ion-input>
+        </ion-item>
+        <br>
+
+        <ion-item>
+          <ion-label>Gravedad especifica de orina</ion-label>
+          <ion-select class="form-control" id="validationServer02" name="sg" [(ngModel)]="test.sg" #sg="ngModel"
+            required>
+            <ion-select-option value="1">1.005</ion-select-option>
+            <ion-select-option value="2">1.010</ion-select-option>
+            <ion-select-option value="3">1.015</ion-select-option>
+            <ion-select-option value="4">1.020</ion-select-option>
+            <ion-select-option value="5">1.025</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+
+        <ion-item>
+          <ion-label>Nivel de albumina</ion-label>
+          <ion-select class="form-control" id="validationServer03" name="al" [(ngModel)]="test.al" #al="ngModel"
+            required>
+            <ion-select-option value="0">0</ion-select-option>
+            <ion-select-option value="1">1</ion-select-option>
+            <ion-select-option value="2">2</ion-select-option>
+            <ion-select-option value="3">3</ion-select-option>
+            <ion-select-option value="4">4</ion-select-option>
+            <ion-select-option value="5">5</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br>
+
+        <ion-item>
+          <ion-label>Nivel de azucar</ion-label>
+          <ion-select class="form-control" id="validationServer04" name="su" [(ngModel)]="test.su" #su="ngModel"
+            required>
+            <ion-select-option value="0">0</ion-select-option>
+            <ion-select-option value="1">1</ion-select-option>
+            <ion-select-option value="2">2</ion-select-option>
+            <ion-select-option value="3">3</ion-select-option>
+            <ion-select-option value="4">4</ion-select-option>
+            <ion-select-option value="5">5</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+
+        <br>
+
+        <ion-item>
+          <ion-label>Células rojas de la sangre</ion-label>
+          <ion-select class="form-control" id="validationServer05" name="rbc" [(ngModel)]="test.rbc" #rbc="ngModel"
+            required>
+            <ion-select-option value="normal">Normal</ion-select-option>
+            <ion-select-option value="abnormal">Anormal</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+
+        <ion-item>
+          <ion-label>Células de pus</ion-label>
+          <ion-select class="form-control" id="validationServer06" name="pc" [(ngModel)]="test.pc" #pc="ngModel"
+            required>
+            <ion-select-option value="normal">Normal</ion-select-option>
+            <ion-select-option value="abnormal">Anormal</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+
+        <br>
+        <ion-item>
+          <ion-label>Grupos de células de pus</ion-label>
+          <ion-select class="form-control" id="validationServer07" name="pcc" [(ngModel)]="test.pcc" #pcc="ngModel"
+            required>
+            <ion-select-option value="present">Presente</ion-select-option>
+            <ion-select-option value="noPresent">No presente</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+
+        <ion-item>
+          <ion-label>Bacteria</ion-label>
+          <ion-select class="form-control" id="validationServer08" name="ba" [(ngModel)]="test.ba" #ba="ngModel"
+            required>
+            <ion-select-option value="present">Presente</ion-select-option>
+            <ion-select-option value="noPresent">No presente</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+
+        <br>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer09" name="bgr" [(ngModel)]="test.bgr" #bgr="ngModel"
+            required type="number" placeholder="Glucosa en sangre al azar"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer10" name="bu" [(ngModel)]="test.bu" #bu="ngModel" required
+            type="number" placeholder="Urea de sangre"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer11" name="sc" [(ngModel)]="test.sc" #sc="ngModel" required
+            type="number" placeholder="Suero de creatinina"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer12" name="sod" [(ngModel)]="test.sod" #sod="ngModel"
+            required type="number" placeholder="Sodio"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer13" name="pot" [(ngModel)]="test.pot" #pot="ngModel"
+            required type="number" placeholder="Potasio"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer14" name="hemo" [(ngModel)]="test.hemo" #hemo="ngModel"
+            required type="number" placeholder="Hemoglobina"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer15" name="pcv" [(ngModel)]="test.pcv" #pcv="ngModel"
+            required type="number" placeholder="Numero de packetes en una célula"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer16" name="wc" [(ngModel)]="test.wc" #wc="ngModel" required
+            type="number" placeholder="Recuento de glóbulos blancos"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input class="form-control" id="validationServer17" name="rc" [(ngModel)]="test.rc" #rc="ngModel" required
+            type="number" placeholder="Conteo de glóbulos rojos"></ion-input>
+        </ion-item>
+        <br>
+
+
+        <ion-item>
+          <ion-label>Hipertensión</ion-label>
+          <ion-select class="form-control" id="validationServer18" name="htn" [(ngModel)]="test.htn" #htn="ngModel"
+            required>
+            <ion-select-option value="Si">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+
+        <ion-item>
+          <ion-label>Diabetes mellitus</ion-label>
+          <ion-select class="form-control" id="validationServer19" name="dm" [(ngModel)]="test.dm" #dm="ngModel"
+            required>
+            <ion-select-option value="Si">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+
+        <ion-item>
+          <ion-label>Enfermedad de la arteria coronaria</ion-label>
+          <ion-select class="form-control" id="validationServer20" name="cad" [(ngModel)]="test.cad" #cad="ngModel"
+            required>
+            <ion-select-option value="Si">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+
+        <ion-item>
+          <ion-label>Apetito</ion-label>
+          <ion-select class="form-control" id="validationServer21" name="appet" [(ngModel)]="test.appet"
+            #appet="ngModel" required>
+            <ion-select-option value="good">Bueno</ion-select-option>
+            <ion-select-option value="poor">Malo</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+
+        <ion-item>
+          <ion-label>Edema de pedal</ion-label>
+          <ion-select class="form-control" id="validationServer22" name="pe" [(ngModel)]="test.pe" #pe="ngModel"
+            required>
+            <ion-select-option value="Si">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br>
+
+        <ion-item>
+          <ion-label>Anemia</ion-label>
+          <ion-select class="form-control" id="validationServer23" name="ane" [(ngModel)]="test.ane" #ane="ngModel"
+            required>
+            <ion-select-option value="Si">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br>
+      </div>
+      <br>
+      <div padding>
+        <ion-button size="large" expand="block" type="submit" color="secondary" [disabled]="!forma.valid">Ver resultado
+        </ion-button>
+      </div>
+    </ion-col>
+  </form>
+</ion-content>
