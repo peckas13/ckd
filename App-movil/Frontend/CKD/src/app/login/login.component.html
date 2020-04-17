@@ -4,6 +4,9 @@
 			<div text-center>
 				<img src="../../assets/icon/imagen-logo.png" style="width: 35%; margin-left: 32%;">
 			</div>
+			<div text-center style="margin-left: 32%;">
+                 <img src="../../assets/icon/ckd-logo.png" style="width: 50%;">
+			</div>
 			<br><br>
 			<form class="needs-validation" (ngSubmit)="onLogin(form)" #form="ngForm">
 				<div class="form-group" padding>
@@ -29,9 +32,9 @@
 					<ion-button size="large" expand="block" type="submit" [disabled]="!form.valid">Iniciar sesion
 					</ion-button>
 				</div>
-				<br>
+				<hr>
 				<div padding>
-					<ion-button size="large" expand="block" (click)="registrar()">Registrarse</ion-button>
+					<ion-button size="small" expand="block" (click)="registrar()"><ion-icon name="person-add-outline" style="width: 10%;"></ion-icon> Registrarse</ion-button>
 				</div>
 			</form>
 
