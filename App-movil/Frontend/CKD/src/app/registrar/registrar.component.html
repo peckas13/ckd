@@ -8,7 +8,7 @@
 
 
 <ion-row justify-content-center>
-	<form (ngSubmit)="registrarUsuario(forma)" #forma="ngForm">
+	<form (ngSubmit)="registrarUsuario(forma)" #forma="ngForm" style="background-color: white;">
 		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
 			<div text-center>
 				<img src="../../assets/icon/imagen-logo.png" style="width: 20%; margin-left: 40%;">
@@ -51,9 +51,8 @@
 				</ion-item>
 				<br>
 				<ion-item>
-					<ion-input class="form-control" id="validationServer07" name="dateFechaNacimiento"
-						[(ngModel)]="usuario.dateFechaNacimiento" #dateFechaNacimiento="ngModel" required type="date"
-						placeholder="Fecha de nacimiento"></ion-input>
+					Fecha Nacimiento:
+					<ion-datetime display-format="D MMM YYYY " min="1970" max="2020" value="1999-02-17T11:06Z" [(ngModel)]="usuario.dateFechaNacimiento" name="dateFechaNacimiento"></ion-datetime>
 				</ion-item>
 				<br>
 				<ion-item>

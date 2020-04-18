@@ -3,6 +3,7 @@ import { UsuarioService } from "../services/usuario.service";
 import { UsuarioModel } from "../models/usuario";
 import { NgForm } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { AlertController } from '@ionic/angular';
 export class LoginComponent implements OnInit {
 
   usuario: UsuarioModel = new UsuarioModel();
-  constructor(public alertController: AlertController, private service: UsuarioService) { }
+  constructor(public alertController: AlertController, private service: UsuarioService, private router :Router) { }
 
 
   async error() {
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.service.login(this.usuario).then((usuario: any) => {
       form.reset();
       localStorage.setItem('token', usuario.token);
-      location.pathname = "tabs/tab1"
+      this.router.navigate(['/tabs/tab1']);
     }).catch((err: any) => {
       console.log(err);
       this.error();
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
   }
 
   registrar() {
-    location.href = "/registro";
+    this.router.navigate(['/registro']);
   }
 
 }

@@ -66,7 +66,7 @@ app.post('/registrar', (req, res) => {
 });
 app.put('/actualizar/:id', (req, res) => {
     let id = req.params.id;
-    let body = _.pick(req.body, ['strRol', 'strCiudad', 'strNombre', 'strCorreoElectronico', 'numTelefono', 'strContrasenia', 'blnEstado']);
+    let body = _.pick(req.body, ['strRol', 'strCiudad', 'strNombre', 'strCorreoElectronico', 'numTelefono', 'strContrasenia', 'blnEstado', 'strApellidoMat', 'strApellidoPat', 'dateFechaNacimiento']);
 
     Usuario.findByIdAndUpdate(id, body, { new: true, runValidators: true, context: 'query' }, (err, usrDB) => {
         if (err) {
@@ -75,9 +75,13 @@ app.put('/actualizar/:id', (req, res) => {
                 err
             });
         }
+        let token = jwt.sign({
+            usuario: usrDB
+        }, process.env.SEED, { expiresIn: process.env.CADUCIDAD_TOKEN });
         return res.status(200).json({
             ok: true,
-            usrDB
+            usrDB,
+            token
         });
 
     });

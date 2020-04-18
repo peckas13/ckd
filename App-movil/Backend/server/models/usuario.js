@@ -29,8 +29,8 @@ let usuarioSchema = new Schema({
         required: [true, 'Por favor ingresar tu ciudad']
     },
     dateFechaNacimiento: {
-        type: Date,
-        require: [true, 'Ingresar la fecha de nacimiento']
+        type: String,
+        require:true ['Ingresar la fecha de nacimiento']
     },
     numTelefono: {
         type: Number,

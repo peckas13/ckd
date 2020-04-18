@@ -3,6 +3,7 @@ import { UsuarioService } from "../services/usuario.service";
 import { UsuarioModel } from "../models/usuario";
 import { NgForm } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar',
@@ -13,7 +14,7 @@ export class RegistrarComponent implements OnInit {
 
 
   usuario: UsuarioModel = new UsuarioModel();
-  constructor(public alertController: AlertController, private usuarioService: UsuarioService) { }
+  constructor(public alertController: AlertController, private usuarioService: UsuarioService, private router: Router) { }
 
   async registroExitoso() {
     const alert = await this.alertController.create({
@@ -23,7 +24,7 @@ export class RegistrarComponent implements OnInit {
         {
           text: '¡Iniciar sesión!',
           handler: () => {
-            location.href = "/";
+            this.router.navigate(['/']);
           }
         }
       ]
@@ -46,7 +47,7 @@ export class RegistrarComponent implements OnInit {
   }
 
   return() {
-    location.href = "/";
+    this.router.navigate(['/']);
   }
 
   registrarUsuario(forma: NgForm) {
