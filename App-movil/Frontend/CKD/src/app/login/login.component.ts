@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.service.login(this.usuario).then((usuario: any) => {
       form.reset();
       localStorage.setItem('token', usuario.token);
-      this.router.navigate(['/tabs/tab1']);
+      window.location.pathname="/tabs/tab1";
     }).catch((err: any) => {
       console.log(err);
       this.error();

@@ -56,7 +56,7 @@
 				</ion-item>
 				<br>
 				<ion-item>
-          <i>Fecha Nacimiento:</i>
+          <i>{{User.dateFechaNacimiento | date}} to:</i>
             <ion-datetime value="{{User.dateFechaNacimiento}}" display-timezone="utc"name="dateFechaNacimiento"
 			[(ngModel)]="usuario.dateFechaNacimiento"></ion-datetime>
 				</ion-item>
