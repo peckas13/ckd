@@ -13,7 +13,11 @@ const routes: Routes = [
         redirectTo: '/registrar'
       }
     ]
+  },  {
+    path: 'actualizar-persona',
+    loadChildren: () => import('./actualizar-persona/actualizar-persona.module').then( m => m.ActualizarPersonaPageModule)
   }
+
 ];
 
 @NgModule({

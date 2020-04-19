@@ -30,7 +30,7 @@ let usuarioSchema = new Schema({
     },
     dateFechaNacimiento: {
         type: String,
-        require:true ['Ingresar la fecha de nacimiento']
+        require: true['Ingresar la fecha de nacimiento']
     },
     numTelefono: {
         type: Number,
@@ -43,6 +43,10 @@ let usuarioSchema = new Schema({
     blnEstado: {
         type: Boolean,
         default: true
+    },
+    img: {
+        type: String,
+        default: "img.jpg"
     }
 });
 
