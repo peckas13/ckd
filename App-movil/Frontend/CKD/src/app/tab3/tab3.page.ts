@@ -20,4 +20,8 @@ export class Tab3Page implements OnInit {
   actulizar(){
     this.router.navigate(['/actualizar']);
   }
+  logOut(){
+    localStorage.clear();
+    this.router.navigate(['/'])
+  }
 }
