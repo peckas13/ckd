@@ -42,6 +42,7 @@ export class RegistrarComponent implements OnInit {
         height: 150,
         quality: 100,
         allowEditing: false,
+        saveToGallery: true,
         resultType: CameraResultType.DataUrl,
         source: CameraSource.Camera
       });
