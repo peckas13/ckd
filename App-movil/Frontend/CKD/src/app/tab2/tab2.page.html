@@ -9,9 +9,22 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Tus test</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div *ngFor="let item of testRes">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>{{item.fecha | date:'yyyy-MM-dd'}}</ion-card-subtitle>
+        <ion-card-title>Resultado (Preventivo): {{item.resultado}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="item.resultado=='POSITIVO'">
+        Es preferible que consultes a tu médico de confianza <br> o contancta mediante nuestra app
+      </ion-card-content>
+      <ion-card-content *ngIf="item.resultado=='NEGATIVO'">
+        No tienes riesgo pero aun asi no significa que no puedas tener IRC
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

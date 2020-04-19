@@ -4,6 +4,8 @@ import { UsuarioModel } from "../models/usuario";
 import { NgForm } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { Plugins,CameraResultType, CameraSource } from '@capacitor/core';
 
 @Component({
   selector: 'app-registrar',
@@ -12,9 +14,10 @@ import { Router } from '@angular/router';
 })
 export class RegistrarComponent implements OnInit {
 
-
+  photo: SafeResourceUrl;
+  imageUrl: any;
   usuario: UsuarioModel = new UsuarioModel();
-  constructor(public alertController: AlertController, private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private sanitizer: DomSanitizer,public alertController: AlertController, private usuarioService: UsuarioService, private router: Router) { }
 
   async registroExitoso() {
     const alert = await this.alertController.create({
@@ -30,6 +33,20 @@ export class RegistrarComponent implements OnInit {
       ]
     });
     await alert.present();
+  }
+
+   
+  async takePicture() {
+      const image = await Plugins.Camera.getPhoto({
+        width: 150,
+        height: 150,
+        quality: 100,
+        allowEditing: false,
+        resultType: CameraResultType.DataUrl,
+        source: CameraSource.Camera
+      });
+  
+      this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
   }
 
   async registroFallido() {

@@ -7,67 +7,67 @@
 </ion-header>
 
 
-<ion-row justify-content-center>
-	<form (ngSubmit)="registrarUsuario(forma)" #forma="ngForm" style="background-color: white;">
-		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-			<div text-center>
-				<img src="../../assets/icon/imagen-logo.png" style="width: 20%; margin-left: 40%;">
-			</div>
-			<div padding>
-				<ion-item>
-					<ion-input class="form-control" id="validationServer01" name="strNombre"
-						[(ngModel)]="usuario.strNombre" #strNombre="ngModel" required type="text"
-						placeholder="Nombre/Nombres"></ion-input>
-				</ion-item>
+<ion-content>
+		<form (ngSubmit)="registrarUsuario(forma)" #forma="ngForm" style="background-color: white;">
+				<div text-center>
+					<img src="../../assets/icon/imagen-logo.png" style="width: 20%; margin-left: 40%;">
+					<img [src]="photo" alt="Foto de perfil" class="profilePicture" (click)="takePicture()">
+				</div>
+				<div padding>
+					<ion-item>
+						<ion-input class="form-control" id="validationServer01" name="strNombre"
+							[(ngModel)]="usuario.strNombre" #strNombre="ngModel" required type="text"
+							placeholder="Nombre/Nombres"></ion-input>
+					</ion-item>
+					<br>
+					<ion-item>
+						<ion-input class="form-control" id="validationServer02" name="strApellidoPat"
+							[(ngModel)]="usuario.strApellidoPat" #strApellidoPat="ngModel" required type="text"
+							placeholder="Apellido paterno"></ion-input>
+					</ion-item>
+					<br>
+					<ion-item>
+						<ion-input class="form-control" id="validationServer03" name="strApellidoMat"
+							[(ngModel)]="usuario.strApellidoMat" #strApellidoMat="ngModel" required type="text"
+							placeholder="Apellido materno"></ion-input>
+					</ion-item>
+					<br>
+					<ion-item>
+						<ion-input class="form-control" id="validationServer04" name="strCorreoElectronico"
+							[(ngModel)]="usuario.strCorreoElectronico" #strCorreoElectronico="ngModel" required type="Email"
+							placeholder="Correo Electronico"></ion-input>
+					</ion-item>
+					<br>
+					<ion-item>
+						<ion-input class="form-control" id="validationServer05" name="numTelefono"
+							[(ngModel)]="usuario.numTelefono" #numTelefono="ngModel" required type="number"
+							placeholder="Número telefonico"></ion-input>
+					</ion-item>
+					<br>
+					<ion-item>
+						<ion-input class="form-control" id="validationServer06" name="strCiudad"
+							[(ngModel)]="usuario.strCiudad" #strCiudad="ngModel" required type="text" placeholder="Ciudad">
+						</ion-input>
+					</ion-item>
+					<br>
+					<ion-item>
+						Fecha Nacimiento:
+						<ion-datetime display-format="D MMM YYYY " min="1970" max="2020" value="1999-02-17T11:06Z" [(ngModel)]="usuario.dateFechaNacimiento" name="dateFechaNacimiento"></ion-datetime>
+					</ion-item>
+					<br>
+					<ion-item>
+						<ion-input class="form-control" id="validationServer08" name="strContrasenia"
+							[(ngModel)]="usuario.strContrasenia" #strContrasenia="ngModel" required type="password"
+							placeholder="Contraseña"></ion-input>
+					</ion-item>
+				</div>
 				<br>
-				<ion-item>
-					<ion-input class="form-control" id="validationServer02" name="strApellidoPat"
-						[(ngModel)]="usuario.strApellidoPat" #strApellidoPat="ngModel" required type="text"
-						placeholder="Apellido paterno"></ion-input>
-				</ion-item>
-				<br>
-				<ion-item>
-					<ion-input class="form-control" id="validationServer03" name="strApellidoMat"
-						[(ngModel)]="usuario.strApellidoMat" #strApellidoMat="ngModel" required type="text"
-						placeholder="Apellido materno"></ion-input>
-				</ion-item>
-				<br>
-				<ion-item>
-					<ion-input class="form-control" id="validationServer04" name="strCorreoElectronico"
-						[(ngModel)]="usuario.strCorreoElectronico" #strCorreoElectronico="ngModel" required type="Email"
-						placeholder="Correo Electronico"></ion-input>
-				</ion-item>
-				<br>
-				<ion-item>
-					<ion-input class="form-control" id="validationServer05" name="numTelefono"
-						[(ngModel)]="usuario.numTelefono" #numTelefono="ngModel" required type="number"
-						placeholder="Número telefonico"></ion-input>
-				</ion-item>
-				<br>
-				<ion-item>
-					<ion-input class="form-control" id="validationServer06" name="strCiudad"
-						[(ngModel)]="usuario.strCiudad" #strCiudad="ngModel" required type="text" placeholder="Ciudad">
-					</ion-input>
-				</ion-item>
-				<br>
-				<ion-item>
-					Fecha Nacimiento:
-					<ion-datetime display-format="D MMM YYYY " min="1970" max="2020" value="1999-02-17T11:06Z" [(ngModel)]="usuario.dateFechaNacimiento" name="dateFechaNacimiento"></ion-datetime>
-				</ion-item>
-				<br>
-				<ion-item>
-					<ion-input class="form-control" id="validationServer08" name="strContrasenia"
-						[(ngModel)]="usuario.strContrasenia" #strContrasenia="ngModel" required type="password"
-						placeholder="Contraseña"></ion-input>
-				</ion-item>
-			</div>
-			<br>
-			<div padding>
-				<ion-button size="large" expand="block" type="submit" [disabled]="!forma.valid">Registrar
-				</ion-button>
-				<ion-button size="large" expand="block" color="warning" (click)="return()">Cancelar
-				</ion-button>
-			</div>
-		</ion-col>
-	</form>
-</ion-row>
+				<div padding>
+					<ion-button size="large" expand="block" type="submit" [disabled]="!forma.valid">Registrar
+					</ion-button>
+					<ion-button size="large" expand="block" color="warning" (click)="return()">Cancelar
+					</ion-button>
+				</div>
+		</form>
+	
+</ion-content>

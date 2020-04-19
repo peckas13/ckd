@@ -8,12 +8,15 @@ import { TestModel } from '../models/test';
 })
 export class TestService {
 
-    private url: string = 'http://localhost:3000/deteccion/'
+    private url: string = 'http://192.168.1.80:3000/deteccion/'
 
     constructor(private http: HttpClient) { }
 
     test(test: TestModel) {
         return this.http.post(`${this.url}test`, test).toPromise();
+    }
+    obtenerTest(idUsuario: any) {
+        return this.http.get(`${this.url}obtener/${idUsuario}`).toPromise();
     }
 
 }

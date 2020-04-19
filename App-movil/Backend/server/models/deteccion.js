@@ -1,8 +1,17 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
+const Usuario = require('../models/usuario');
 let Schema = mongoose.Schema;
 
 let deteccionSchema = new Schema({
+    idUsuario: {
+        type: Schema.Types.ObjectId,
+        ref: 'Usuario'
+    },
+    fecha:{
+        type: Date,
+        default: Date.now()
+    },
     bp: {
         type: Number,
 

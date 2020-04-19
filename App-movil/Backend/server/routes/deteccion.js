@@ -9,6 +9,7 @@ app.get('/get', (req, res) => {
 app.post('/test', (req, res) => {
     let body = req.body;
     let deteccion = new Deteccion({
+        idUsuario: body.idUsuario,
         sg: body.sg,
         al: body.al,
         su: body.su,
@@ -65,4 +66,17 @@ app.post('/test', (req, res) => {
     });
 });
 
+app.get('/obtener/:idUsuario', (req,res) => {
+    Deteccion.find({idUsuario: req.params.idUsuario}).then((resp) => {
+        return res.status(200).json({
+            ok: true,
+            resp
+        });
+    }).catch((err) => {
+        return res.status(400).json({
+            ok: false,
+            err
+        });
+    });
+});
 module.exports = app;

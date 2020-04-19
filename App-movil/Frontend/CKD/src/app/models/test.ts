@@ -1,5 +1,6 @@
 export class TestModel {
     _id?: string;
+    idUsuario: string;
     bp: number;
     sg: number;
     al: number;
