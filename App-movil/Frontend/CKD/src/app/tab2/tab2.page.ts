@@ -57,8 +57,7 @@ export class Tab2Page {
       console.log(this.allUsers);
     })
   }
-  sendEmail(correo){
-    console.log(correo);
+  sendEmail(){
     
   }
 }

@@ -7,25 +7,62 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  
+  <ion-card style="display: none;" id="usuarioM">
+    <ion-card>
+      <ion-item href="#" class="ion-activated">
+        <ion-card-header>
+          <ion-img style="border: solid rgba(26, 67, 182, 0.2);padding: 10px;border-radius: 25px;" src="assets/img/dp.jpg"></ion-img>
+          <ion-card-title style="font-family: Impact, Charcoal, sans-serif; text-align: center;">Insuficiencia renal crónica</ion-card-title>
+        </ion-card-header>
+      </ion-item>
+    </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-img src="assets/img/dp.jpg"></ion-img>
-      <ion-card-title>Insuficiencia renal crónica</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      La enfermedad renal crónica significa que sus riñones están dañados y no pueden filtrar la sangre como deberían.
+    <ion-card>
+      <ion-item>
+        <ion-icon name="bandage-outline" slot="start" color="primary" style="border: solid white; border-radius: 30%;"></ion-icon>
+        <ion-label>Iniciar Test</ion-label>
+        <ion-button fill="outline" slot="end" (click)="test()">Start</ion-button>
+      </ion-item>
+    
+      <ion-card-content  class="ion-text-justify">
+        La enfermedad renal crónica significa que sus riñones están dañados y no pueden filtrar la sangre como deberían.
       Este daño puede ocasionar que los desechos se acumulen en su cuerpo y causen otros problemas que podrían
       perjudicar su salud.
       Nuestro test consiste en comparar los diferentes resultados de los estudios que previamente tu deberas de
       realizarte y en base a nuestra experiencia te daremos un resultado el cual puede ser positivo o negativo. <br>
-      <b>Este test no es 100% fiable , te recomendamos ir con tu medico si tienes algun sintoma!</b>
+      </ion-card-content>
+      <ion-card-content style="text-align: center;">
+        <b> Este test no es 100% fiable,te recomendamos acudir con tu medico si tienes algun sintoma! </b>
     </ion-card-content>
-    <ion-button expand="block" (click)="test()">Iniciar test</ion-button>
+    </ion-card>
     <br><br>
   </ion-card>
+  <!--Administrador -->
+  <div id="datosUsuario">
+    <ion-card style="text-align: center;">Usuario Roles</ion-card>
+    <div *ngFor="let usr of this.usuarios; let i = index">
+      <ion-card (click)="getUsersById(usr._id)">
+        <ion-card-header style="border: solid rgb(56, 128, 255);">
+          <ion-card-subtitle> {{i+1}}° Correo: {{usr.strCorreoElectronico}}
+             </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+  </div>
+  
+    
+    <div style="border: solid rgb(240, 173, 78); position: absolute; top: 30%;; background-color: rgb(240, 173, 78,0.2); width: 100%; display: none;" id="rol">
+      <ion-card *ngFor="let item of this.usuario">
+        <ion-card-header style="border: solid rgb(240, 173, 78);">
+          <ion-button style="margin-left: 80%;" color="danger" size="small"(click)="cancel()" >X</ion-button>
+          <ion-card-title> Nombre:{{item.strNombre}} </ion-card-title>
+          <ion-card-subtitle> Correo: {{item.strCorreoElectronico}}</ion-card-subtitle>
+          <ion-card-subtitle> Rol: {{item.strRol}}
+            <ion-button *ngIf="item.strRol=='USER'" size="small" color="warning" (click)="actualizarRol(item._id)">Agregar Doctor</ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
 
-
-
-</ion-content>
+  </ion-content>

@@ -1,10 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title *ngIf="this.User">
-      Test realizados
-    </ion-title>
-    <ion-title *ngIf="this.Admin" style="text-align: center;">
-      Usuarios Prueba Positiva
+    <ion-title>
+      Test
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -47,7 +44,7 @@
         <ion-card-subtitle>Apellido: {{usuarios.idUsuario.strApellidoPat}} {{usuarios.idUsuario.strApellidoMat}} </ion-card-subtitle>
         <ion-card-subtitle> Correo: {{usuarios.idUsuario.strCorreoElectronico}} </ion-card-subtitle>
         <ion-card-subtitle> -
-          <ion-button color="primary" size="small" (click)="sendEmail(usuarios.idUsuario.strCorreoElectronico)">Enviar Correo</ion-button>
+          <ion-button color="primary" size="small" (click)="sendEmail()">Enviar Correo</ion-button>
         </ion-card-subtitle>
       </ion-card-header>
     </ion-card>
