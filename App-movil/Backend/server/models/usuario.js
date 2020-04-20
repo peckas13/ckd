@@ -7,6 +7,7 @@ let Schema = mongoose.Schema;
 let usuarioSchema = new Schema({
     strRol: {
         type: String,
+        default: 'USER'
     },
     strNombre: {
         type: String,

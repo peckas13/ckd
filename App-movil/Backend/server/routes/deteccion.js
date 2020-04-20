@@ -79,4 +79,17 @@ app.get('/obtener/:idUsuario', (req,res) => {
         });
     });
 });
+app.get('/obtener', (req,res) => {
+    Deteccion.find({resultado:"POSITIVO"},{idUsuario:1}).populate({ path: 'idUsuario', match: { blnEstado: true } }).then((resp) => {
+        return res.status(200).json({
+            ok: true,
+            resp 
+        });
+    }).catch((err) => {
+        return res.status(400).json({
+            ok: false,
+            err
+        });
+    });
+});
 module.exports = app;

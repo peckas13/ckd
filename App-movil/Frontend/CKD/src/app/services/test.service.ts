@@ -18,5 +18,8 @@ export class TestService {
     obtenerTest(idUsuario: any) {
         return this.http.get(`${this.url}obtener/${idUsuario}`).toPromise();
     }
+    obtener() {
+        return this.http.get(`${this.url}obtener`).toPromise();
+    }
 
 }
