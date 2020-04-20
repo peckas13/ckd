@@ -66,7 +66,7 @@ app.post('/registrar', (req, res) => {
 });
 app.put('/actualizar/:id', (req, res) => {
     let id = req.params.id;
-    let body = _.pick(req.body, ['strRol', 'strCiudad', 'strNombre', 'strCorreoElectronico', 'numTelefono', 'strContrasenia', 'blnEstado', 'strApellidoMat', 'strApellidoPat', 'dateFechaNacimiento']);
+    let body = _.pick(req.body, ['strRol', 'strCiudad', 'strNombre', 'strCorreoElectronico', 'numTelefono', 'strContrasenia', 'blnEstado', 'strApellidoMat', 'strApellidoPat', 'dateFechaNacimiento','img']);
 
     Usuario.findByIdAndUpdate(id, body, { new: true, runValidators: true, context: 'query' }, (err, usrDB) => {
         if (err) {

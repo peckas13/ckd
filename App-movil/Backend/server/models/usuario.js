@@ -47,7 +47,7 @@ let usuarioSchema = new Schema({
     },
     img: {
         type: String,
-        default: "img.jpg"
+        default: "profile.png"
     }
 });
 

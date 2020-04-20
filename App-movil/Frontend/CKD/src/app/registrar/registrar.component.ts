@@ -35,7 +35,6 @@ export class RegistrarComponent implements OnInit {
     await alert.present();
   }
 
-   
   async takePicture() {
       const image = await Plugins.Camera.getPhoto({
         width: 150,
@@ -44,10 +43,10 @@ export class RegistrarComponent implements OnInit {
         allowEditing: false,
         saveToGallery: true,
         resultType: CameraResultType.DataUrl,
-        source: CameraSource.Camera
+        source: CameraSource.Camera,
       });
-  
       this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
+      console.log(this.photo);
   }
 
   async registroFallido() {
@@ -61,7 +60,7 @@ export class RegistrarComponent implements OnInit {
   }
 
   ngOnInit() {
-
+  this.photo = '../../assets/icon/camera.png'
   }
 
   return() {
@@ -75,6 +74,9 @@ export class RegistrarComponent implements OnInit {
       console.log(err);
       this.registroFallido();
     });
+
+  }
+  sendPhoto(){
 
   }
 

@@ -1,6 +1,7 @@
 export class UsuarioModel {
     _id?: string;
     strRol?: string;
+    img: string;
     strNombre: string;
     strApellidoPat: string;
     strApellidoMat: string;

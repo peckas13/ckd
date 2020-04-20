@@ -10,12 +10,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-avatar>
-    <img src="../../assets/img/profile.png">
+  <ion-avatar style="margin-left: 15%;">
+    <img [src]="photo" alt="Foto de perfil" class="profilePicture" >
   </ion-avatar>
-  
   <ion-chip>
-    <ion-label>Datos Usuario</ion-label>
+    <ion-button size="small" color="tertiary" (click)="takePicture()">Actualiza Foto</ion-button>
   </ion-chip>
   
   <ion-item>
