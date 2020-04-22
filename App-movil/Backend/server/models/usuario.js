@@ -23,6 +23,7 @@ let usuarioSchema = new Schema({
     },
     strCorreoElectronico: {
         type: String,
+        unique: true,
         required: [true, 'Insertar su correo electronico']
     },
     strCiudad: {
