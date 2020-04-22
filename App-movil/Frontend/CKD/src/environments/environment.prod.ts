@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  urlLocal: 'http://localhost:3000/',
+  urlProd: 'https://ckdutags.herokuapp.com/'
 };

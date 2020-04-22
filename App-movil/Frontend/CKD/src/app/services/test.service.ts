@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";;
 import { TestModel } from '../models/test';
+import { environment } from "../../environments/environment.prod";
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { TestModel } from '../models/test';
 })
 export class TestService {
 
-    private url: string = 'http://localhost:3000/deteccion/'
+    private url: string = `${environment.urlProd}/deteccion/`;
 
     constructor(private http: HttpClient) { }
 
