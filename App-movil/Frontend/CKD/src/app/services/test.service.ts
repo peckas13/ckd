@@ -9,7 +9,7 @@ import { environment } from "../../environments/environment.prod";
 })
 export class TestService {
 
-    private url: string = `${environment.urlProd}/deteccion/`;
+    private url: string = `${environment.urlProd}deteccion/`;
 
     constructor(private http: HttpClient) { }
 

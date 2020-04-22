@@ -3,7 +3,7 @@ import { UsuarioService } from '../services/usuario.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import decode from 'jwt-decode';
 import { UsuarioModel } from '../models/usuario';
-
+import { FileChooser } from '@ionic-native/file-chooser/ngx';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -16,8 +16,10 @@ rolUser:Boolean=false;
 Admin:Boolean=false;
 user:any=[];
 strRol:any=[];
+currentUserIfo: any;
 modeloUsuario: UsuarioModel = new UsuarioModel();
-  constructor(public service: UsuarioService) { }
+  alertController: any;
+  constructor(public service: UsuarioService, private fileChooser: FileChooser) { }
 ngOnInit(){
   this.getUsers();
   let usrInfo = decode(localStorage.getItem('token'));
@@ -33,6 +35,26 @@ ngOnInit(){
     document.getElementById('datosUsuario').style.display="none";
     document.getElementById('usuarioM').style.display="inline";
   }
+}
+chooseFile(){
+  this.fileChooser.open()
+  .then((uri) => {
+   
+  })
+  .catch((e) =>{
+    console.log(e)
+  });
+}
+
+async presentAlert(mensaje: any) {
+  const alert = await this.alertController.create({
+    header: 'Alert',
+    subHeader: 'Usted subio una imagen',
+    message: mensaje,
+    buttons: ['OK']
+  });
+
+  await alert.present();
 }
   test() {
     location.href = "/tabs/tab1/test";

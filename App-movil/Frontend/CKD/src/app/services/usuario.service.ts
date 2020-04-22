@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";;
 import { UsuarioModel } from '../models/usuario';
-import { environment } from "../../environments/environment.prod";
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
@@ -9,7 +9,7 @@ import { environment } from "../../environments/environment.prod";
 })
 export class UsuarioService {
 
-    private url: string = `${environment.urlProd}/usuario/`
+    private url: string = `${environment.urlProd}usuario/`;
 
     constructor(private http: HttpClient) { }
 
@@ -20,13 +20,15 @@ export class UsuarioService {
     registrarUsuario(usuario: UsuarioModel) {
         return this.http.post(`${this.url}registrar`, usuario).toPromise();
     }
-    actualizar(id, usuario: UsuarioModel) {
-        return this.http.put(`${this.url}actualizar/${id}`, usuario).toPromise();
+    actualizar(id,usuario : UsuarioModel){
+        return this.http.put(`${this.url}actualizar/${id}`,usuario).toPromise();
     }
-    obtenerId(id) {
-        return this.http.get(`${this.url}obtener/${id}`).toPromise();
+    obtenerId(id){
+       return this.http.get(`${this.url}obtener/${id}`).toPromise();
     }
-    obtener() {
+    obtener(){
         return this.http.get(`${this.url}obtener`).toPromise();
     }
+    
+    
 }

@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TestPipe } from './test.pipe';
-
+import { FileChooser } from '@ionic-native/file-chooser/ngx';
 @NgModule({
   declarations: [AppComponent, TestPipe],
   entryComponents: [],
@@ -19,7 +19,8 @@ import { TestPipe } from './test.pipe';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FileChooser
   ],
   bootstrap: [AppComponent]
 })

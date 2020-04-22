@@ -17,6 +17,41 @@ export class RegistrarComponent implements OnInit {
   photo: SafeResourceUrl;
   imageUrl: any;
   usuario: UsuarioModel = new UsuarioModel();
+  cuidades = [
+    'Aguascalientes',
+    'Baja California',
+    'Baja California Sur',
+    'Campeche',
+    'Chiapas',
+    'Chihuahua',
+    'Coahuila de Zaragoza',
+    'Colima',
+    'CDMX',
+    'Durango',
+    'Guanajuato',
+    'Guerrero',
+    'Hidalgo',
+    'Jalisco',
+    'México',
+    'Michoacán de Ocampo',
+    'Morelos',
+    'Nayarit',
+    'Nuevo León',
+    'Oaxaca',
+    'Puebla',
+    'Querétaro Arteaga',
+   'Quintana Roo',
+    'San Luís Potosí',
+    'Sinaloa',
+    'Sonora',
+    'Tabasco',
+    'Tamaulipas',
+    'Tlaxcala',
+    'Veracruz Llave',
+    'Yucatán',
+    'Zacatecas',
+    'Otro...',
+]
   constructor(private sanitizer: DomSanitizer,public alertController: AlertController, private usuarioService: UsuarioService, private router: Router) { }
 
   async registroExitoso() {
